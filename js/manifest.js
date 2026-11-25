@@ -13,7 +13,8 @@ window.ASSET_MANIFEST = {
   },
   "sounds": {
     "fly": [
-      "assets/sounds/fly/amaluttan-theri.mp3"
+      "assets/sounds/fly/amaluttan-theri.mp3",
+      "assets/sounds/fly/modiji-friends.mp3"
     ],
     "hit": [
       "assets/sounds/hit/oombi-dialogue.mp3"
