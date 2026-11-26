@@ -1995,6 +1995,9 @@
       best = score;
       localStorage.setItem("hm_best", best);
     }
+    if (window.Leaderboard) {
+      window.Leaderboard.submitScore(score);
+    }
     // surviving mosquitos fly away happy
     for (const m of mosquitos) {
       if (m.stopFly) m.stopFly();
@@ -2147,6 +2150,9 @@
   });
   canvas.addEventListener("pointerleave", () => (pointer.x = pointer.y = -999));
   window.addEventListener("keydown", (e) => {
+    const tag = e.target && e.target.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA" || (e.target && e.target.isContentEditable)) return;
+    if ($("leaderboardScreen")?.classList.contains("show")) return;
     if (e.key === "Escape" || e.key === "p" || e.key === "P") {
       state === "playing" ? pauseGame() : resumeGame();
     }
